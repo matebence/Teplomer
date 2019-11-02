@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="app_title_size">35sp</dimen>
+    <dimen name="app_title_margin_left">25dp</dimen>
+    <dimen name="app_title_margin_top">15dp</dimen>
+    <dimen name="temperature_icon_width">100dp</dimen>
+    <dimen name="temperature_icon_height">100dp</dimen>
+    <dimen name="temperature_font_size">60sp</dimen>
+    <dimen name="humidity_icon_width">90dp</dimen>
+    <dimen name="humidity_icon_height">90dp</dimen>
+    <dimen name="humidity_font_size">60sp</dimen>
+    <dimen name="humidity_margin_top">20dp</dimen>
+    <dimen name="percentage_font_size">30sp</dimen>
+    <dimen name="celsius_font_size">30sp</dimen>
+    <dimen name="line_ticknes">1dp</dimen>
+    <dimen name="button_width_and_height">70dp</dimen>
+    <dimen name="buttons_margin_top_bottom">10dp</dimen>
+    <dimen name="button_margin_left">60dp</dimen>
+    <dimen name="elevation_level">1dp</dimen>
+</resources>

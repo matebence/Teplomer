@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">teplomer++</string>
+    <string name="temperature_icon">Temperature icon</string>
+    <string name="celsius">°C</string>
+    <string name="humidity_icon">Humidity icon</string>
+    <string name="percentage">%</string>
+    <string name="zvysenie_tep">Zvýšenie tep.</string>
+    <string name="casovac">Časovač</string>
+    <string name="znizenie_tep">Zníženie tep.</string>
+    <string name="temperature_increasing_button">Temperature increasing button</string>
+    <string name="temperature_decreasing_button">Temperature decreasing button</string>
+    <string name="schudeler_button">Schudeler button</string>
+    <string name="data_boli_ziskane">Dáta boli získané zo servera</string>
+    <string name="server_je_nedostupny">Server je nedostupný</string>
+    <string name="teplota_zvysena">Teplota bola zvýšená o</string>
+    <string name="data_boli_spracovane">Dáta boli spracované</string>
+    <string name="teplolota_znizena">Teplota bola znížená o</string>
+</resources>

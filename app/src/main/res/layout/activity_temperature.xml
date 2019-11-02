@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/refresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ic_background">
+
+            <RelativeLayout
+                android:id="@+id/loading"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorLoading"
+                android:elevation="@dimen/elevation_level"
+                tools:ignore="UnusedAttribute">
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:indeterminateTint="@color/colorProgressbar"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/app_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/meiryo_bold_italic"
+                android:textSize="@dimen/app_title_size"
+                android:layout_marginTop="@dimen/app_title_margin_top"
+                android:layout_marginLeft="@dimen/app_title_margin_left"
+                android:layout_marginStart="@dimen/app_title_margin_left"
+                android:textColor="@color/colorTitle"
+                android:text="@string/app_name"
+                tools:targetApi="jelly_bean" />
+
+            <LinearLayout
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:id="@+id/temperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="@dimen/temperature_icon_width"
+                        android:layout_height="@dimen/temperature_icon_height"
+                        android:src="@drawable/ic_thermometer"
+                        android:tint="@color/colorIcon"
+                        android:contentDescription="@string/temperature_icon" />
+
+                    <TextView
+                        android:id="@+id/temperature_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/meiryo_bold"
+                        android:textColor="@color/colorText"
+                        android:textSize="@dimen/temperature_font_size"
+                        android:text="NaN"
+                        tools:ignore="HardcodedText,UnusedAttribute" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/meiryo_bold"
+                        android:textColor="@color/colorText"
+                        android:textSize="@dimen/celsius_font_size"
+                        android:layout_gravity="start"
+                        android:text="@string/celsius"
+                        tools:ignore="UnusedAttribute" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/humidity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/humidity_margin_top"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="@dimen/humidity_icon_width"
+                        android:layout_height="@dimen/humidity_icon_height"
+                        android:src="@drawable/ic_humidity"
+                        android:tint="@color/colorIcon"
+                        android:contentDescription="@string/humidity_icon" />
+
+                    <TextView
+                        android:id="@+id/humidity_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/meiryo_bold"
+                        android:textColor="@color/colorText"
+                        android:textSize="@dimen/humidity_font_size"
+                        android:text="NaN"
+                        tools:ignore="HardcodedText,UnusedAttribute" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/meiryo"
+                        android:textColor="@color/colorText"
+                        android:textSize="@dimen/percentage_font_size"
+                        android:layout_gravity="start"
+                        android:text="@string/percentage"
+                        tools:ignore="UnusedAttribute" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_above="@+id/buttons"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_ticknes"
+                android:background="@color/colorDelimeter"/>
+
+            <LinearLayout
+                android:id="@+id/buttons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/buttons_margin_top_bottom"
+                android:layout_marginBottom="@dimen/buttons_margin_top_bottom"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                tools:ignore="UseCompoundDrawables">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginRight="@dimen/button_margin_left"
+                    android:layout_marginEnd="@dimen/button_margin_left"
+                    tools:ignore="UselessParent">
+
+                    <Button
+                        android:id="@+id/decrease_button"
+                        android:layout_width="@dimen/button_width_and_height"
+                        android:layout_height="@dimen/button_width_and_height"
+                        android:layout_gravity="center"
+                        android:background="@drawable/button_decrease"
+                        android:contentDescription="@string/temperature_decreasing_button" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/meiryo"
+                        android:textColor="@color/colorText"
+                        android:text="@string/znizenie_tep"
+                        tools:ignore="UnusedAttribute" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    tools:ignore="UselessParent">
+
+                    <Button
+                        android:id="@+id/increase_button"
+                        android:layout_width="@dimen/button_width_and_height"
+                        android:layout_height="@dimen/button_width_and_height"
+                        android:layout_gravity="center"
+                        android:background="@drawable/button_increase"
+                        android:contentDescription="@string/temperature_increasing_button" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/meiryo"
+                        android:textColor="@color/colorText"
+                        android:text="@string/zvysenie_tep"
+                        tools:ignore="UnusedAttribute" />
+                </LinearLayout>
+            </LinearLayout>
+    </RelativeLayout>
+</android.support.v4.widget.SwipeRefreshLayout>

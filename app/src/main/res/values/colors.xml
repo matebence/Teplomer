@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorStatusBar">#0e0a1d</color>
+    <color name="colorTitle">#aeadb3</color>
+    <color name="colorIcon">#ffffff</color>
+    <color name="colorText">#ffffff</color>
+    <color name="colorDelimeter">#7a8398</color>
+    <color name="colorProgressbar">#447ce7</color>
+    <color name="colorLoading">#9b000000</color>
+    <color name="colorSnackbar">#111a39</color>
+</resources>
