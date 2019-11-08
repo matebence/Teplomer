@@ -23,13 +23,13 @@ public class TemperatureActivityPresenter {
     private Context context;
     private Temperature temperature;
 
-    public TemperatureActivityPresenter(View view, Context context){
+    public TemperatureActivityPresenter(View view, Context context) {
         this.temperature = new Temperature();
         this.context = context;
         this.view = view;
     }
 
-    public void fetchTemperatureData(){
+    public void fetchTemperatureData() {
         view.showProgressBar();
         view.disableButtons(false);
 
@@ -38,9 +38,9 @@ public class TemperatureActivityPresenter {
 
         call.enqueue(new Callback<Data>() {
             @Override
-            public void onResponse(@NonNull Call<Data>call, @NonNull Response<Data> response) {
-                if(response.body() != null){
-                    if(!(Double.isNaN(response.body().getTemperature())) && !(Double.isNaN(response.body().getHumidity()))){
+            public void onResponse(@NonNull Call<Data> call, @NonNull Response<Data> response) {
+                if (response.body() != null) {
+                    if (!(Double.isNaN(response.body().getTemperature())) && !(Double.isNaN(response.body().getHumidity()))) {
                         temperature.setTemperature(response.body().getTemperature());
                         temperature.setHumidity(response.body().getHumidity());
                     }
@@ -55,7 +55,7 @@ public class TemperatureActivityPresenter {
             }
 
             @Override
-            public void onFailure(@NonNull Call<Data>call, @NonNull Throwable t) {
+            public void onFailure(@NonNull Call<Data> call, @NonNull Throwable t) {
                 view.showSnackbar(context.getString(R.string.server_je_nedostupny));
                 view.hideProgressBar();
                 view.enableButtons(true);
@@ -65,7 +65,7 @@ public class TemperatureActivityPresenter {
         });
     }
 
-    public void increaseTemeprature(){
+    public void increaseTemeprature() {
         view.showProgressBar();
         view.disableButtons(false);
 
@@ -74,11 +74,9 @@ public class TemperatureActivityPresenter {
 
         call.enqueue(new Callback<Increase>() {
             @Override
-            public void onResponse(@NonNull Call<Increase>call, @NonNull Response<Increase> response) {
-                if(response.body() != null){
-                    if(response.body().getIncreased() != 0){
-                        view.showSnackbar(context.getString(R.string.teplota_zvysena)+ " " + response.body().getIncreased()+context.getString(R.string.celsius));
-                    }
+            public void onResponse(@NonNull Call<Increase> call, @NonNull Response<Increase> response) {
+                if (response.body() != null) {
+                    view.showSnackbar(context.getString(R.string.teplota_zvysena) + " " + response.body().getIncreased() + context.getString(R.string.celsius));
                 }
 
                 view.hideProgressBar();
@@ -88,7 +86,7 @@ public class TemperatureActivityPresenter {
             }
 
             @Override
-            public void onFailure(@NonNull Call<Increase>call, @NonNull Throwable t) {
+            public void onFailure(@NonNull Call<Increase> call, @NonNull Throwable t) {
                 view.showSnackbar(context.getString(R.string.server_je_nedostupny));
                 view.hideProgressBar();
                 view.enableButtons(true);
@@ -98,7 +96,7 @@ public class TemperatureActivityPresenter {
         });
     }
 
-    public void decreaseTemeprature(){
+    public void decreaseTemeprature() {
         view.showProgressBar();
         view.disableButtons(false);
 
@@ -107,11 +105,9 @@ public class TemperatureActivityPresenter {
 
         call.enqueue(new Callback<Decrease>() {
             @Override
-            public void onResponse(@NonNull Call<Decrease>call, @NonNull Response<Decrease> response) {
-                if(response.body() != null){
-                    if(response.body().getDecreased() != 0){
-                        view.showSnackbar(context.getString(R.string.teplolota_znizena)+ " " + response.body().getDecreased()+context.getString(R.string.celsius));
-                    }
+            public void onResponse(@NonNull Call<Decrease> call, @NonNull Response<Decrease> response) {
+                if (response.body() != null) {
+                    view.showSnackbar(context.getString(R.string.teplolota_znizena) + " " + response.body().getDecreased() + context.getString(R.string.celsius));
                 }
 
                 view.hideProgressBar();
@@ -121,7 +117,7 @@ public class TemperatureActivityPresenter {
             }
 
             @Override
-            public void onFailure(@NonNull Call<Decrease>call, @NonNull Throwable t) {
+            public void onFailure(@NonNull Call<Decrease> call, @NonNull Throwable t) {
                 view.showSnackbar(context.getString(R.string.server_je_nedostupny));
                 view.hideProgressBar();
                 view.enableButtons(true);
@@ -131,16 +127,18 @@ public class TemperatureActivityPresenter {
         });
     }
 
-    public interface View{
+    public interface View {
 
         void updateTemperatureData(Temperature temperature);
 
         void showSnackbar(String msg);
 
         void disableButtons(boolean disabled);
+
         void enableButtons(boolean enabled);
 
         void showProgressBar();
+
         void hideProgressBar();
     }
 }
